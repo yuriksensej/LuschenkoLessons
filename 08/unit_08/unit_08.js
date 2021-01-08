@@ -3,9 +3,14 @@
 //     1 2 3 4 5 6 7 8 9 ... 49 50
 // от 1 до 50 включительно. Разделитель - пробел. Задача решается с помощью цикла.
 
-
 function t1() {
-
+  let i = 1;
+  let out = '';
+  while (i < 51) {
+    out += i + ' ';
+    i++;
+  }
+  document.querySelector('.out-1').textContent = out;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -16,11 +21,16 @@ document.querySelector('.b-1').onclick = t1;
 // от 2 до 122 c шагом 2. Разделитель - пробел. Задача решается с помощью цикла  while.
 
 function t2() {
-
+  let out = '';
+  let i = 2;
+  while (i < 123) {
+    out += i + ' ';
+    i += 2;
+  }
+  document.querySelector('.out-2').textContent = out;
 }
 
 document.querySelector('.b-2').onclick = t2;
-
 
 //  Task 3
 // Кнопка b-3 запускает функцию t3. Функция должна выводить в out-3 строку вида:
@@ -28,7 +38,13 @@ document.querySelector('.b-2').onclick = t2;
 // от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла  while.
 
 function t3() {
-
+  let out = '';
+  let i = 25;
+  while (i > 6) {
+    out += i + ' ';
+    i--;
+  }
+  document.querySelector('.out-3').textContent = out;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -38,13 +54,17 @@ document.querySelector('.b-3').onclick = t3;
 //     77_74_71_68_65_62_ ... _38_35_
 // от 77 до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла  while.
 
-
 function t4() {
-
+  let out = '';
+  let i = 77;
+  while (i > 34) {
+    out += i + '_';
+    i -= 3;
+  }
+  document.querySelector('.out-4').textContent = out;
 }
 
 document.querySelector('.b-4').onclick = t4;
-
 
 //  Task 5
 // Кнопка b-5 запускает функцию t5. Функция должна выводить в out-5 строку вида:
@@ -52,11 +72,16 @@ document.querySelector('.b-4').onclick = t4;
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла  while.
 
 function t5() {
-
+  let out = '';
+  let i = 1;
+  while (i < 18) {
+    i % 2 == 0 ? (out += i + '_**') : (out += i + '_*');
+    i++;
+  }
+  document.querySelector('.out-5').textContent = out;
 }
 
 document.querySelector('.b-5').onclick = t5;
-
 
 //  Task 6
 // Кнопка b-6 запускает функцию t6. Функция должна выводить в out-6 строку вида:
@@ -67,11 +92,17 @@ document.querySelector('.b-5').onclick = t5;
 // Количество строк (итераций, повторений) цикла  while вводит пользователь в i-6.
 
 function t6() {
-
+  let out = '';
+  let val_iteration = +document.querySelector('.i-6').value;
+  let i = 0;
+  while (i < val_iteration) {
+    out += '******' + '<br>';
+    i++;
+  }
+  document.querySelector('.out-6').innerHTML = out;
 }
 
 document.querySelector('.b-6').onclick = t6;
-
 
 //  Task 7
 // Есть input i-7 куда пользователь может ввести число больше нуля (проверок не делаем, принимаем как факт).
@@ -81,11 +112,16 @@ document.querySelector('.b-6').onclick = t6;
 // Задача решается с помощью цикла  while.
 
 function t7() {
-
+  let val_i_7 = +document.querySelector('.i-7').value;
+  let out = '';
+  while (val_i_7 >= 0) {
+    out += val_i_7 + ' ';
+    val_i_7--;
+  }
+  document.querySelector('.out-7').textContent = out;
 }
 
 document.querySelector('.b-7').onclick = t7;
-
 
 //  Task 8
 // Есть input i-81 и i-82 куда пользователь может ввести числа больше нуля (проверок не делаем, принимаем как факт).
@@ -96,11 +132,17 @@ document.querySelector('.b-7').onclick = t7;
 // Задача решается с помощью цикла  while.
 
 function t8() {
-
+  let val_i_81 = +document.querySelector('.i-81').value;
+  let val_i_82 = +document.querySelector('.i-82').value;
+  let out = '';
+  while (val_i_81 <= val_i_82) {
+    out += val_i_81 + ' ';
+    val_i_81++;
+  }
+  document.querySelector('.out-8').textContent = out;
 }
 
 document.querySelector('.b-8').onclick = t8;
-
 
 //  Task 9
 // Есть input i-91 и i-92 куда пользователь может ввести числа.
@@ -112,18 +154,32 @@ document.querySelector('.b-8').onclick = t8;
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл  while.
 
 function t9() {
-
+  let val_i_91 = +document.querySelector('.i-91').value;
+  let val_i_92 = +document.querySelector('.i-92').value;
+  let out = '';
+  let min_value = Math.min(val_i_91, val_i_92);
+  let max_value = Math.max(val_i_91, val_i_92);
+  while (min_value <= max_value) {
+    out += min_value + ' ';
+    min_value++;
+  }
+  document.querySelector('.out-9').textContent = out;
 }
 
 document.querySelector('.b-9').onclick = t9;
-
 
 //  Task 10
 // Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно.
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
 function t10() {
-
+  let year = 1950;
+  let out = '';
+  while (year <= 2000) {
+    out += year + ' ';
+    year += 2;
+  }
+  document.querySelector('.out-10').textContent = out;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -136,9 +192,15 @@ document.querySelector('.b-10').onclick = t10;
 //     В результате должно получиться так:
 //     one 3 4 two
 
-
 function t11() {
-
+  let arr = document.querySelectorAll('div.div-11');
+  let out = '';
+  let i = 0;
+  while (i < arr.length) {
+    out += arr[i].textContent + ' ';
+    i++;
+  }
+  document.querySelector('.out-11').textContent = out;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -149,9 +211,13 @@ document.querySelector('.b-11').onclick = t11;
 // перебрать их с помощью цикла  while. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
-
 function t12() {
-
+  let arr = document.querySelectorAll('div.div-12');
+  let i = 0;
+  while (i < arr.length) {
+    arr[i].style.background = 'orange';
+    i++;
+  }
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -163,7 +229,12 @@ document.querySelector('.b-12').onclick = t12;
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
 function t13() {
-
+  let arr = document.querySelectorAll('.i-13');
+  let i = 0;
+  while (i < arr.length) {
+    arr[i].value = i + 1;
+    i++;
+  }
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -174,9 +245,15 @@ document.querySelector('.b-13').onclick = t13;
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // вывести в out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
-
 function t14() {
-
+  let arr = document.querySelectorAll('.i-14');
+  let i = 0;
+  let out = '';
+  while (i < arr.length) {
+    arr[i].checked ? (out += arr[i].value) : (out += '');
+    i++;
+  }
+  document.querySelector('.out-14').textContent = out;
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -187,7 +264,13 @@ document.querySelector('.b-14').onclick = t14;
 // Для вывода использовать цикл  while. Разделитель пробел.
 
 function t15() {
-
+  let i = 10;
+  let out = '';
+  while (i >= 0) {
+    out += i + ' ' + (i - 10) * -1 + ' ';
+    i--;
+  }
+  document.querySelector('.out-15').textContent = out;
 }
 
 document.querySelector('.b-15').onclick = t15;
