@@ -172,41 +172,68 @@ document.querySelector('.b-14').onclick = f14;
 //  Task 15
 // Добавьте кнопку .b-15, которая запускает функцию f15. Функция создает через createElement div c текстом 15 и добавляет ему класс bg-15. Созданный div добавляется в out-15 с помощью before.
 
-function f15() {}
+function f15() {
+  let div = document.createElement('div');
+  div.textContent = 15;
+  div.classList.add('bg-15');
+  document.querySelector('.out-15').before(div);
+}
 
 document.querySelector('.b-15').onclick = f15;
 
 //  Task 16
 // Добавьте кнопку .b-16, которая запускает функцию f16. Функция создает через createElement div c текстом 16 и добавляет ему класс bg-16. Созданный div добавляется в out-16 с помощью after.
 
-function f16() {}
+function f16() {
+  let div = document.createElement('div');
+  div.textContent = 16;
+  div.classList.add('bg-16');
+  document.querySelector('.out-16').after(div);
+}
 
 document.querySelector('.b-16').onclick = f16;
 
 //  Task 17
 // Добавьте кнопку .b-17, которая запускает функцию f17. Функция создает через createElement div c текстом 17 и добавляет ему класс bg-17. Созданный div заменяет  out-17 с помощью replaceWith.
 
-function f17() {}
+function f17() {
+  let div = document.createElement('div');
+  div.textContent = 17;
+  div.classList.add('bg-17');
+  document.querySelector('.out-17').replaceWith(div);
+}
 
 document.querySelector('.b-17').onclick = f17;
 
 //  Task 18
 // Добавьте кнопку .b-18, которая запускает функцию f18. Функция с помощью getAttribute получает data-b атрибут с параграф p-18 и выводит в out-18.
 
-function f18() {}
+function f18() {
+  let atr_18 = document.querySelector('.p-18').getAttribute('data-b');
+  document.querySelector('.out-18').textContent = atr_18;
+}
 
 document.querySelector('.b-18').onclick = f18;
 
 //  Task 19
 // Добавьте кнопку .b-19, которая запускает функцию f19. Функция с помощью getAttribute получает data-b атрибут с параграфов p-19 и выводит в out-19 через пробел. Обратите внимание, что элементов p-19 больше одного.
 
-function f19() {}
+function f19() {
+  let arr_atr_19 = document.querySelectorAll('.p-19');
+  let out = '';
+  arr_atr_19.forEach((item) => {
+    out += item.getAttribute('data-b') + ' ';
+  });
+  document.querySelector('.out-19').textContent = out;
+}
 
 document.querySelector('.b-19').onclick = f19;
 
 //  Task 20
 // Добавьте кнопку .b-20, которая запускает функцию f20. Функция с помощью setAttribute присваивает атрибут title="go" в div.out-20.
 
-function f20() {}
+function f20() {
+  document.querySelector('.out-20').setAttribute('title', 'go');
+}
 
 document.querySelector('.b-20').onclick = f20;
