@@ -46,7 +46,13 @@ function f3() {
     odd: 'hi',
     mix: 'mix',
   };
-  return `${a3.five} ${a3.odd}`;
+  let out = ' ';
+  for (const key in a3) {
+    if (a3[key] == 'hi') {
+      out += a3[key] + ' ';
+    }
+  }
+  return out;
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -68,7 +74,7 @@ let a4 = {
 function f4() {
   let out = '';
   for (const key in a4) {
-    out += `${key} ${a4[key]}<br>`;
+    out += `${key} ${a4[key]}<br> <br>`;
   }
   return out;
 }
@@ -81,6 +87,11 @@ document.querySelector('.b-4').onclick = () => {
 
 function f5(arr, block) {
   let out = '';
+  for (const key in arr) {
+    out += `${key} : ${arr[key]} <br>`;
+  }
+  document.querySelector(block).innerHTML = out;
+
   // цикл
   // формат вывода `${key} : ${arr[key]} <br>`;
   //
@@ -105,7 +116,12 @@ let a6 = {
   e: 22,
 };
 
-function f6() {}
+function f6() {
+  let key_61 = document.querySelector('.i-61').value;
+  let val = document.querySelector('.i-61').value;
+  a6[key_61] = val;
+  f5(a6, '.out-6');
+}
 
 document.querySelector('.b-6').onclick = f6;
 
@@ -117,7 +133,11 @@ let a7 = {
   e: 22,
 };
 
-function f7() {}
+function f7() {
+  let key_7 = document.querySelector('.i-7').value;
+  let out = document.querySelector('.out-7');
+  a7[key_7] !== undefined ? (out.textContent = 1) : (out.textContent = 0);
+}
 
 document.querySelector('.b-7').onclick = f7;
 
@@ -129,7 +149,13 @@ let a8 = {
   e: 22,
 };
 
-function f8() {}
+function f8() {
+  let key_8 = document.querySelector('.i-8').value;
+  let out_8 = document.querySelector('.out-8');
+  a8[key_8] !== undefined
+    ? (out_8.textContent = key_8)
+    : (out_8.textContent = 0);
+}
 
 document.querySelector('.b-8').onclick = f8;
 
@@ -144,7 +170,17 @@ let a9 = {
   d: 54,
 };
 
-function f9() {}
+function f9() {
+  let i_9 = document.querySelector('.i-9').value;
+  let out_9 = document.querySelector('.out-9');
+  let out = '';
+  for (const key in a9) {
+    if (a9[key] == i_9) {
+      out += a9[key] + ' ';
+    }
+  }
+  out_9.textContent = out;
+}
 
 document.querySelector('.b-9').onclick = f9;
 
@@ -152,6 +188,13 @@ document.querySelector('.b-9').onclick = f9;
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
 function f10(arr, val) {
+  for (const key in arr) {
+    if (arr[key] == val) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   //return true;
   //return false;
 }
@@ -175,8 +218,15 @@ let a11 = {
   k: 22,
   d: 54,
 };
-
-function f11() {}
+function f11() {
+  let key_11 = document.querySelector('.i-11').value;
+  for (const key in a11) {
+    if (key_11 == key) {
+      delete a11[key];
+    }
+  }
+  f5(a11, '.out-11');
+}
 
 document.querySelector('.b-11').onclick = f11;
 
@@ -191,7 +241,15 @@ let a12 = {
   d: 17,
 };
 
-function f12() {}
+function f12() {
+  let i_12 = document.querySelector('.i-12').value;
+  for (const key in a12) {
+    if (a12[key] == i_12) {
+      delete a12[key];
+    }
+  }
+  f5(a12, '.out-12');
+}
 
 document.querySelector('.b-12').onclick = f12;
 
@@ -205,7 +263,15 @@ let a13 = {
   ivan: 6,
 };
 
-function f13() {}
+function f13() {
+  let sum = 0;
+  for (const key in a13) {
+    if (typeof a13[key] == 'number') {
+      sum += a13[key];
+    }
+  }
+  document.querySelector('.out-13').textContent = sum;
+}
 
 document.querySelector('.b-13').onclick = f13;
 
@@ -220,7 +286,13 @@ let a14 = {
   ivan: [9, 10],
 };
 
-function f14() {}
+function f14() {
+  let out = '';
+  for (const key in a14) {
+    out += a14[key][0] + ' ';
+  }
+  document.querySelector('.out-14').textContent = out;
+}
 
 document.querySelector('.b-14').onclick = f14;
 
@@ -236,7 +308,15 @@ let a15 = {
   ivan: [9, 10],
 };
 
-function f15() {}
+function f15() {
+  let out = '';
+  for (const key in a15) {
+    out += a15[key].reduce((acum, val) => {
+      return `${acum} ${val} `;
+    });
+  }
+  document.querySelector('.out-15').textContent = out;
+}
 
 document.querySelector('.b-15').onclick = f15;
 
@@ -258,7 +338,13 @@ let a16 = {
   },
 };
 
-function f16() {}
+function f16() {
+  let out = '';
+  for (const k in a16) {
+    out += a16[k]['name'] + ' ';
+  }
+  document.querySelector('.out-16').textContent = out;
+}
 
 document.querySelector('.b-16').onclick = f16;
 
@@ -280,7 +366,15 @@ let a17 = {
   },
 };
 
-function f17() {}
+function f17() {
+  let out = '';
+  for (const key in a17) {
+    if (a17[key].age > 30) {
+      out += `${a17[key].name} `;
+    }
+    document.querySelector('.out-17').textContent = out;
+  }
+}
 
 document.querySelector('.b-17').onclick = f17;
 
@@ -293,7 +387,18 @@ let a18 = {
   green: ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi'],
 };
 
-function f18() {}
+function f18() {
+  let out = '';
+  let i_18 = document.querySelector('.i-18').value;
+  for (const key in a18) {
+    if (i_18 == key) {
+      out = a18[key].join(' ');
+    }
+  }
+  document.querySelector('.out-18').textContent = out;
+}
+
+document.querySelector('.b-18').onclick = f18;
 
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
@@ -304,8 +409,21 @@ let a19 = {
   blue: ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
   green: ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi'],
 };
+console.log(a19);
 
-function f19() {}
+function f19() {
+  let out = '';
+  let i_19 = document.querySelector('.i-19').value.toLowerCase();
+  for (const key in a19) {
+    for (let i = 0; i < a19[key].length; i++) {
+      if (a19[key][i].toLowerCase() == i_19) {
+        out = key;
+        break;
+      }
+    }
+  }
+  document.querySelector('.out-19').textContent = out;
+}
 
 document.querySelector('.b-19').onclick = f19;
 
@@ -333,6 +451,16 @@ let a20 = {
   ],
 };
 
-function f20() {}
+function f20() {
+  let out = '';
+  for (const key in a20) {
+    for (let i = 0; i < a20[key].length; i++) {
+      if (a20[key][i][1] == 2) {
+        out += a20[key][i][0] + ' ';
+      }
+    }
+  }
+  document.querySelector('.out-20').textContent = out;
+}
 
 document.querySelector('.b-20').onclick = f20;
