@@ -100,7 +100,6 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод в out-8
 
 let d8 = [2, '4', 12, 67, 'hello'];
-
 function f8() {
   let arr2 = [];
   arr2[0] = document.querySelector('.i-8').value;
@@ -109,7 +108,6 @@ function f8() {
   }
   d8 = arr2;
   showArr('.out-8', d8);
-  document.querySelector('.out-8').textContent = d8;
 }
 
 document.querySelector('.b-8').onclick = f8;

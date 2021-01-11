@@ -270,15 +270,16 @@ document.querySelector('.b-14').onclick = f14;
 // т.е ожидаем 6
 
 let a15 = [[], [1, 0], [1, 0, 0, 0], [3, 4, 5, 6, 7, 8], [1, 2]];
-
 function f15() {
-  let out = a15.reduce((acum, value) => {
-    if (acum.length > value.length) {
-      return acum.length;
-    } else {
-      return value;
+  let out = 0;
+  for (let i = 0; i < a15.length; i++) {
+    for (let k = 0; k < a15[i].length; k++) {
+      if (a15[i].length > out) {
+        out = a15[i].length;
+      }
     }
-  });
+  }
+
   document.querySelector('.out-15').textContent = out;
 }
 
