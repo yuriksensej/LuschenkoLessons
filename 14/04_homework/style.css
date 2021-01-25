@@ -9,17 +9,24 @@ body {
 body {
   margin: 20px;
 }
+hr {
+  width: 70%;
+  margin: auto;
+  /* background-color: hotpink; */
+  border: #011627 solid 0.5px;
+  border-radius: 1px;
+}
 .container {
   width: 150px;
   height: 600px;
   box-sizing: border-box;
-  background: darkturquoise;
   background: linear-gradient(
     197.1deg,
     #41ce0f -5.23%,
     #bfefaf 53.93%,
     #ffffff 105.05%
   );
+  border-radius: 5px;
 }
 .city {
   height: 50px;
@@ -28,4 +35,30 @@ body {
   font-size: 32px;
   vertical-align: middle;
   padding-top: 10px;
+}
+.clouds {
+  font-size: 16px;
+  vertical-align: middle;
+  padding-top: 10px;
+  height: 30px;
+}
+.icon {
+  display: block;
+  font-size: 16px;
+  /* width: 24px; */
+  /* height: 24px; */
+  margin: auto;
+  height: auto;
+  padding: 0;
+}
+input {
+  height: 24px;
+  box-sizing: border-box;
+  margin: 10px 0px 0px 0px;
+  width: 100%;
+}
+button {
+  width: 100%;
+  height: 24px;
+  margin-top: 10px;
 }
