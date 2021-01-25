@@ -1,6 +1,31 @@
-html, body {
-    font-family: serif;
+* {
+  margin: 0;
 }
+html,
 body {
-    margin: 20px;
+  font-family: serif;
+}
+
+body {
+  margin: 20px;
+}
+.container {
+  width: 150px;
+  height: 600px;
+  box-sizing: border-box;
+  background: darkturquoise;
+  background: linear-gradient(
+    197.1deg,
+    #41ce0f -5.23%,
+    #bfefaf 53.93%,
+    #ffffff 105.05%
+  );
+}
+.city {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  vertical-align: middle;
+  padding-top: 10px;
 }
