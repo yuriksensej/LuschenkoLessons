@@ -19,14 +19,13 @@ hr {
 .windowWraper {
   width: 150px;
   height: 600px;
-  /* position: absolute; */
-  z-index: 99999;
   border: orange solid 2px;
 }
 .holePage {
   display: flex;
   flex-direction: row;
   overflow: hidden;
+  position: relative;
 }
 .container {
   /* position: relative; */

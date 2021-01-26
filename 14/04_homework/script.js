@@ -115,4 +115,5 @@ function getWeatherByArray() {
     });
 }
 getWeatherByArray();
-function listCities() {}
+function moveSlider() {}
+document.querySelector('.zero').style.left = -150 + 'px';
