@@ -106,7 +106,8 @@ function f7() {
   for (const iterator of a7) {
     obj[iterator.id] = iterator.name;
   }
-  return obj;
+  a7 = obj;
+  return a7;
 }
 
 document.querySelector('.b-7').addEventListener('click', () => {
@@ -121,7 +122,14 @@ let a8 = [
   { id: 45, name: 'Petr' },
 ];
 
-function f8() {}
+function f8() {
+  let arr = [];
+  for (const iterator of a8) {
+    arr.push(iterator.id);
+  }
+  a8 = arr;
+  return a8;
+}
 
 document.querySelector('.b-8').addEventListener('click', () => {
   console.log(f8());
@@ -136,7 +144,16 @@ let a9 = [
   [0, 0, 0, 0, 0],
 ];
 
-function f9() {}
+function f9() {
+  let max = 0;
+  for (let i = 0; i < a9.length; i++) {
+    const element = a9[i];
+    if (max < element.length - 1) {
+      max = element.length - 1;
+    }
+  }
+  return max;
+}
 
 document.querySelector('.b-9').addEventListener('click', () => {
   document.querySelector('.out-9').innerHTML = f9();
@@ -147,7 +164,14 @@ document.querySelector('.b-9').addEventListener('click', () => {
 
 let a10 = [4, 6, 9, 'Hello'];
 
-function f10() {}
+function f10() {
+  let obj = {};
+  for (let i = 0; i < a10.length; i++) {
+    const element = a10[i];
+    obj[element] = element;
+  }
+  return obj;
+}
 
 document.querySelector('.b-10').addEventListener('click', () => {
   console.log(f10());
@@ -163,7 +187,15 @@ let a11 = {
   four: 0,
 };
 
-function f11() {}
+function f11() {
+  let out = '';
+  for (const item in a11) {
+    if (a11[item] > 10) {
+      out += a11[item] + ' ';
+    }
+  }
+  document.querySelector('.out-11').textContent = out;
+}
 
 document.querySelector('.b-11').addEventListener('click', f11);
 
@@ -172,7 +204,13 @@ document.querySelector('.b-11').addEventListener('click', f11);
 
 let a12 = [4, 5, 6, 7];
 
-function f12() {}
+function f12() {
+  let out = '';
+  for (const i of a12) {
+    out += i + ' ';
+  }
+  document.querySelector('.out-12').textContent = out;
+}
 
 document.querySelector('.b-12').addEventListener('click', f12);
 
@@ -181,7 +219,13 @@ document.querySelector('.b-12').addEventListener('click', f12);
 
 let a13 = 'testone';
 
-function f13() {}
+function f13() {
+  let out = '';
+  for (const i of a13) {
+    out += i + ' ';
+  }
+  document.querySelector('.out-13').textContent = out;
+}
 
 document.querySelector('.b-13').addEventListener('click', f13);
 
@@ -190,13 +234,24 @@ document.querySelector('.b-13').addEventListener('click', f13);
 
 let a14 = new Set([4, 5, 6]);
 
-function f14() {}
+function f14() {
+  let out = '';
+  for (const i of a14) {
+    out += i + ' ';
+  }
+  document.querySelector('.out-14').textContent = out;
+}
 
 document.querySelector('.b-14').addEventListener('click', f14);
 
 // Task 15
 //При нажатии .b-15 выполняете функцию f15. Функция должна получить NodeList элементов .out-15 c помощью document.querySelectorAll, затем c помощью for of перебрать полученную коллекцию элементов .out-15 записать внутрь них число 15 ( затерев содержимое).
 
-function f15() {}
+function f15() {
+  let list = document.querySelectorAll('.out-15');
+  for (const item of list) {
+    item.textContent = 15;
+  }
+}
 
 document.querySelector('.b-15').addEventListener('click', f15);
