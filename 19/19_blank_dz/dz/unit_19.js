@@ -30,7 +30,10 @@ document.querySelector('.div-2').onclick = t2;
 let w3 = 75;
 
 function t3() {
-  document.querySelector();
+  let block = document.querySelector('.div-3');
+  w3 += 5;
+  block.style.width = w3 + 'px';
+  document.querySelector('.out-3').textContent = w3;
 }
 document.querySelector('.div-3').addEventListener('click', t3);
 // ваше событие здесь!!!
@@ -38,9 +41,13 @@ document.querySelector('.div-3').addEventListener('click', t3);
 // Task 4 ============================================
 /*  Добавьте на блок .div-4 событие двойной клик и по двойному клику запуск функции t4. Функция должна возвращать и выводить на экран содержимое блока (только текст). Вывод осуществляется в out-4. */
 
-function t4() {}
+function t4() {
+  let str = document.querySelector('.div-4').textContent;
+  document.querySelector('.out-4').textContent = str;
+  return str;
+}
 
-// ваше событие здесь!!!
+document.querySelector('.div-4').addEventListener('dblclick', t4);
 
 // Task 5 ============================================
 /*  Дан блок .div-5.active. Добавьте на него событие двойной клик, по которому удалется класс active если он есть и добавляется если такого класса нет. */
@@ -116,7 +123,7 @@ function t11() {}
 /*  Дан блок .div-14. При нажатии кнопки b-14 добавляйте к нему событие onclick - которое, при клике добавляем блоку div-14 класс active. */
 
 function t14() {}
-document.querySelector('t-14').onclick = t14;
+document.querySelector('.b-14').onclick = t14;
 
 // Task 15 ============================================
 /*  Дан блок .div-15. Добавьте на него событие move. При каждом движении мыши увеличивайте число внутри на 1. */
