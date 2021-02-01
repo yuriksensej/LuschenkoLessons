@@ -128,7 +128,11 @@ document.querySelector('.b-7').onclick = () => {
 let b8 = [3, 14, 15, 92, '6', '5', 'hello', 32];
 
 function t8() {
-  b8_res = b8.filter((elem, index) => index % 2 == 0);
+  b8.filter((elem, index) => {
+    if (elem % 2 == 0 && Number.isInteger(elem)) {
+      b8_res.push(index);
+    }
+  });
   return b8_res;
 }
 

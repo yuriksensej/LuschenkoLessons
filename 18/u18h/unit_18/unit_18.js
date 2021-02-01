@@ -114,8 +114,15 @@ function t9() {
     const element = a9[i];
     arr.push(element.join('-'));
   }
-  arr = arr.join('-');
-  document.querySelector('.out-9').textContent = arr;
+  a9_res = arr.join('-');
+  document.querySelector('.out-9').textContent = a9_res;
+  // let out = '';
+  // a9.forEach((elem) => {
+  //   elem.forEach((elemInner) => {
+  //     out += elemInner + '-';
+  //   });
+  // });
+  // document.querySelector('.out-9').textContent = out;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -128,6 +135,7 @@ function t10() {
   for (const key in a10) {
     queryString += `${key}=${a10[key]}&`;
   }
+  a10_res = queryString;
   document.querySelector('.out-10').textContent = queryString;
 }
 

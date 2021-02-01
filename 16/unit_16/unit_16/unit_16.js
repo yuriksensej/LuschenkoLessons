@@ -89,7 +89,7 @@ function f6() {
       arr.push(i);
     }
   }
-  document.querySelector('.out-6').textContent = arr;
+  document.querySelector('.out-6').textContent = arr.join(' ');
 }
 
 document.querySelector('.b-6').addEventListener('click', f6);
