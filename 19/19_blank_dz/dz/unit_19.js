@@ -79,10 +79,10 @@ document.querySelector('.div-7').addEventListener('contextmenu', t7);
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
+function disableContextmenu(event) {
+  event.preventDefault();
+}
 function t8() {
-  function disableContextmenu(event) {
-    event.preventDefault();
-  }
   if (this.checked) {
     document
       .querySelector('body')
@@ -92,7 +92,6 @@ function t8() {
       .querySelector('body')
       .removeEventListener('contextmenu', disableContextmenu);
   }
-  console.dir(this);
 }
 document.querySelector('.ch-8').addEventListener('change', t8);
 // ваше событие здесь!!!
