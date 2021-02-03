@@ -84,13 +84,9 @@ function disableContextmenu(event) {
 }
 function t8() {
   if (this.checked) {
-    document
-      .querySelector('body')
-      .addEventListener('contextmenu', disableContextmenu);
+    document.body.addEventListener('contextmenu', disableContextmenu);
   } else {
-    document
-      .querySelector('body')
-      .removeEventListener('contextmenu', disableContextmenu);
+    document.body.removeEventListener('contextmenu', disableContextmenu);
   }
 }
 document.querySelector('.ch-8').addEventListener('change', t8);
@@ -99,22 +95,38 @@ document.querySelector('.ch-8').addEventListener('change', t8);
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
-function t9() {}
-
+function t9() {
+  this.setAttribute('src', 'img/2.png');
+}
+document
+  .querySelector('.div-9.block > img')
+  .addEventListener('contextmenu', t9);
 // ваше событие здесь!!!
 
 // Task 10 ============================================
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
 
-function t10() {}
-
+function t10() {
+  this.setAttribute('src', 'img/2.png');
+}
+document
+  .querySelector('.div-10.block > img')
+  .addEventListener('mouseenter', t10);
 // ваше событие здесь!!!
 
 // Task 11 ============================================
 /*  Дан блок .div-11. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши - mouseleave - возвращайте исходное изображение. */
 
-function t11() {}
-
+function t11(event) {
+  if (event.type == 'mouseenter') {
+    this.setAttribute('src', 'img/2.png');
+  } else {
+    this.setAttribute('src', 'img/1.png');
+  }
+}
+let block11 = document.querySelector('.div-11 > img');
+block11.addEventListener('mouseenter', t11);
+block11.addEventListener('mouseleave', t11);
 // ваше событие здесь!!!
 
 // Task 12 ============================================
@@ -123,7 +135,9 @@ function t11() {}
 // () => {
 
 // }
-
+document.querySelector('.div-12').addEventListener('mousedown', (event) => {
+  event.target.classList.add('active');
+});
 // ваше событие здесь!!!
 
 // Task 13 ============================================
