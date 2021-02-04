@@ -22,7 +22,10 @@ document.querySelector('.i-2').addEventListener('keydown', t2);
 
 let w3 = 75;
 
-function t3() {}
+function t3(event) {
+  event.keyCode > 47 && event.keyCode < 58 ? true : false;
+}
+document.querySelector('.i-2').addEventListener('keydown', t3);
 
 // ваше событие здесь!!!
 
