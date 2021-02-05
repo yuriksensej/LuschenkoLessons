@@ -23,47 +23,90 @@ document.querySelector('.i-2').addEventListener('keydown', t2);
 let w3 = 75;
 
 function t3(event) {
-  event.keyCode > 47 && event.keyCode < 58 ? true : false;
+  if (
+    (event.keyCode > 47 && event.keyCode < 58) ||
+    (event.keyCode > 95 && event.keyCode < 105)
+  ) {
+    document.querySelector('.out-3').textContent = true;
+  } else {
+    document.querySelector('.out-3').textContent = false;
+  }
 }
-document.querySelector('.i-2').addEventListener('keydown', t3);
+document.querySelector('.i-3').addEventListener('keydown', t3);
 
 // ваше событие здесь!!!
 
 // Task 4 ============================================
 /*  Дан input .i-4. Напишите функцию t4, которая выводит в .out-4 только символы в нижнем регистре. Т.е. ввели ab4Bci в out получаем ab4bci. */
 
-function t4() {}
+function t4(event) {
+  let str = document.querySelector('.i-4').value;
 
+  document.querySelector('.out-4').textContent = str.toLowerCase();
+}
+document.querySelector('.i-4').addEventListener('input', t4);
 // ваше событие здесь!!!
 
 // Task 5 ============================================
 /*  Дан input .i-5. Напишите функцию t5, которая выводит в .out-5 все вводимые символы в верхнем регистре. Т.е. пользователь ввел AbCd и функция выведет ABCD. */
 
-function t5() {}
+function t5() {
+  let str = document.querySelector('.i-5').value;
+
+  document.querySelector('.out-5').textContent = str.toUpperCase();
+}
+document.querySelector('.i-5').addEventListener('input', t5);
 
 // ваше событие здесь!!!
 
 // Task 6 ============================================
 /*  Дан input .i-6. Напишите функцию t6, которая выводит в .i-6 только символы в нижнем регистре.  */
-
-function t6() {}
+function t6(event) {
+  if (event.data.charCodeAt() > 97) {
+    document.querySelector('.out-6').textContent += event.data;
+  }
+}
+document.querySelector('.i-6').addEventListener('input', t6);
 
 // ваше событие здесь!!!
 
 // Task 7 ============================================
 /*  Дан input .i-7. Напишите функцию t7, которая выводит в .out-7 случаный символ из массива a7 при каждом вводе символа. */
 
-function t7() {
-  const a7 = [];
+function t7(event) {
+  let a7 = [];
+  a7 = inputString7.value.split('');
+  let randNumber = Math.floor(Math.random() * a7.length);
+  document.querySelector('.out-7').textContent = a7[randNumber];
 }
-
+let inputString7 = document.querySelector('.i-7');
+inputString7.addEventListener('input', t7);
 // ваше событие здесь!!!
 
 // Task 8 ============================================
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
+let out = '';
+function t8(event) {
+  let out = document.querySelector('.i-8').value;
+  switch (event.data) {
+    case 'i':
+      symbol8 = 1;
+      break;
+    case 'o':
+      symbol8 = 0;
+      break;
 
-function t8() {}
+    case 'l':
+      symbol8 = 7;
+      break;
 
+    default:
+      symbol8 = event.key;
+      break;
+  }
+  document.querySelector('.out-8').textContent = out + symbol8;
+}
+document.querySelector('.i-8').addEventListener('input', t8);
 // ваше событие здесь!!!
 
 // Task 9 ============================================
