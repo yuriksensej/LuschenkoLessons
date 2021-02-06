@@ -85,9 +85,7 @@ inputString7.addEventListener('input', t7);
 
 // Task 8 ============================================
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
-let out = '';
 function t8(event) {
-  let out = document.querySelector('.i-8').value;
   switch (event.data) {
     case 'i':
       symbol8 = 1;
@@ -101,10 +99,10 @@ function t8(event) {
       break;
 
     default:
-      symbol8 = event.key;
+      symbol8 = event.data;
       break;
   }
-  document.querySelector('.out-8').textContent = out + symbol8;
+  document.querySelector('.out-8').textContent += symbol8;
 }
 document.querySelector('.i-8').addEventListener('input', t8);
 // ваше событие здесь!!!
@@ -112,15 +110,31 @@ document.querySelector('.i-8').addEventListener('input', t8);
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t8, выводит в .out-9 количество нажатых клавиш стрелка вниз. */
 
-function t9() {}
-
+let count9 = 0;
+function t9(event) {
+  if (event.keyCode == 40) {
+    count9++;
+    document.querySelector('.out-9').textContent = count9;
+  }
+  console.log(event);
+}
+document.querySelector('.i-9').addEventListener('keyup', t9);
 // ваше событие здесь!!!
 
 // Task 10 ============================================
 /*  Дан input .i-10 и изображение 1.png. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину изображения. Клавиши стрелка вверх и вниз - увеличивать высоту изображения. Одно нажатие клавиши - 1px. */
-
-function t10() {}
-
+const divImg10 = document.querySelector('.div-10 > img');
+function t10(event) {
+  if (event.code == 'ArrowLeft' || event.code == 'ArrowRight') {
+    divImg10.style.height = divImg10.clientHeight + 'px';
+    divImg10.style.width = divImg10.clientWidth + 1 + 'px';
+  }
+  if (event.code == 'ArrowUp' || event.code == 'ArrowDown') {
+    divImg10.style.width = divImg10.clientWidth + 'px';
+    divImg10.style.height = divImg10.clientHeight + 1 + 'px';
+  }
+}
+document.querySelector('.i-10').addEventListener('keydown', t10);
 // ваше событие здесь!!!
 
 // Task 11 ============================================
@@ -130,7 +144,18 @@ function t10() {}
 3. Если вводится следующий символ – повторить удаление active и подсветить клавишу с введенным символом.
 4. Ограничения проекта – тестируются только указанные клавиши в латинской раскладке. Комбинации клавиш не тестируются. Т.е. нажиматься shift+A, ctrl+shift – не будут. Все символы вводятся в нижнем регистре.
 */
-
-function t11() {}
-
+let keyBoardKeys = document.querySelectorAll('.keyBlock, .keyBlockAd ');
+function t11(event) {
+  for (const iterator of keyBoardKeys) {
+    if (
+      event.key == iterator.textContent ||
+      event.code == iterator.textContent
+    ) {
+      iterator.classList.add('active');
+    } else {
+      iterator.classList.remove('active');
+    }
+  }
+}
+document.querySelector('.i-11').addEventListener('keyup', t11);
 // ваше событие здесь!!!
