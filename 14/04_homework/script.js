@@ -115,5 +115,18 @@ function getWeatherByArray() {
     });
 }
 getWeatherByArray();
-function moveSlider() {}
-document.querySelector('.zero').style.left = -150 + 'px';
+function moveSlider() {
+  let interval = setInterval(changeCities, 2000);
+  let count = 0;
+  let moveSliderValue = -150;
+  function changeCities() {
+    document.querySelector('.holePage').style.left = moveSliderValue + 'px';
+    moveSliderValue -= 150;
+    count++;
+    if (count > 4) {
+      document.querySelector('.holePage').style.left = 0 + 'px';
+      clearInterval(interval);
+    }
+  }
+}
+document.querySelector('.changeWeather').addEventListener('click', moveSlider);
