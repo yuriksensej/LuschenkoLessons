@@ -1,3 +1,5 @@
+const authKey = 'DdC33D7d2C2a7';
+const serverUrl = 'http://getpost.itgid.info/index2.php';
 // Task 1 ============================================
 /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Выведите в out-1 результат. Запускаться функция должна по нажатию b-1. */
 
@@ -161,55 +163,157 @@ document.querySelector('.b-10').addEventListener('click', t10);
 // Task 11 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-11 результат. Запускаться функция должна по нажатию b-11. */
 
-function t11() {}
-
+function t11() {
+  fetch('http://getpost.itgid.info/index2.php', {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: 'auth=DdC33D7d2C2a7&action=2&name=Yurii',
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-11').textContent = text;
+    });
+}
+document.querySelector('.b-11').addEventListener('click', t11);
 // ваше событие здесь!!!
 
 // Task 12 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-12 результат. Запускаться функция должна по нажатию b-12.*/
 
-function t12() {}
-
+function t12() {
+  fetch('http://getpost.itgid.info/index2.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: 'auth=DdC33D7d2C2a7&action=3&num1=7&num2=13',
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-12').textContent = text;
+    });
+}
+document.querySelector('.b-12').addEventListener('click', t12);
 // ваше событие здесь!!!
 
 // Task 13 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет случайное число в заданном диапазоне. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-13 результат. Запускаться функция должна по нажатию b-13.*/
 
-function t13() {}
-
+function t13() {
+  fetch('http://getpost.itgid.info/index2.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: 'auth=DdC33D7d2C2a7&action=4&num1=7&num2=13',
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-13').textContent = text;
+    });
+}
+document.querySelector('.b-13').addEventListener('click', t13);
 // ваше событие здесь!!!
 
 // Task 14 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-14 результат. Запускаться функция должна по нажатию b-14.*/
 
-function t14() {}
+function t14() {
+  fetch('http://getpost.itgid.info/index2.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `auth=${authKey}&action=5`,
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-14').textContent = text;
+    });
+}
 
+document.querySelector('.b-14').addEventListener('click', t14);
 // ваше событие здесь!!!
 
 // Task 15============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-15 результат. Запускаться функция должна по нажатию b-15. */
 
-function t15() {}
-
+function t15() {
+  fetch(serverUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `auth=${authKey}&action=6&num1=7&num2=13`,
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-15').textContent = text;
+    });
+}
+document.querySelector('.b-15').addEventListener('click', t15);
 // ваше событие здесь!!!
 
 // Task 16 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-16 результат. Запускаться функция должна по нажатию b-16. */
 
-function t16() {}
-
+function t16() {
+  fetch(serverUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `auth=${authKey}&action=7`,
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-16').textContent = text;
+    });
+}
+document.querySelector('.b-16').addEventListener('click', t16);
 // ваше событие здесь!!!
 
 // Task 17 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. В качестве параметра по очереди укажите year равный году вашего рождения. Если все правильно сервер вернет ваш возраст. Не забывайте указывать параметр auth (ключ в чате).Выведите в out-17 результат. Запускаться функция должна по нажатию b-17. */
 
-function t17() {}
-
+function t17() {
+  fetch(serverUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `auth=${authKey}&action=8&year=1978`,
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-17').textContent = text;
+    });
+}
+document.querySelector('.b-17').addEventListener('click', t17);
 // ваше событие здесь!!!
 
 // Task 18 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-18 результат. Запускаться функция должна по нажатию b-18. */
 
-function t18() {}
-
+function t18() {
+  fetch(serverUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `auth=${authKey}&action=9&m=1&d=1&y=1`,
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      document.querySelector('.out-18').textContent = text;
+    });
+}
+document.querySelector('.b-18').addEventListener('click', t18);
 // ваше событие здесь!!!
