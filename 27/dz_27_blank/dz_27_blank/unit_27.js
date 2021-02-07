@@ -101,8 +101,22 @@ document.querySelector('.b-3').addEventListener('click', t3);
 
 */
 
-function t4() {}
-
+function t4() {
+  let p1 = new Promise((resolve, reject) => {
+    fetch(`${serverUrl}?auth=${authKey}&action=7`).then((response) =>
+      resolve(response.text())
+    );
+  });
+  let p2 = new Promise((resolve, reject) => {
+    fetch(`${serverUrl}?auth=${authKey}&action=8&year=1978`).then((response) =>
+      resolve(response.text())
+    );
+  });
+  Promise.all([p1, p2]).then((text) => {
+    document.querySelector('.out-4').textContent = text;
+  });
+}
+document.querySelector('.b-4').addEventListener('click', t4);
 // ваше событие здесь!!!
 
 // Task 5 ============================================
@@ -115,8 +129,30 @@ POST запрос на сайт http://getpost.itgid.info/index2.php. В кач�
 должна по нажатию b-5.</p>
 */
 
-function t5() {}
-
+function t5() {
+  let p1 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=1`,
+    }).then((response) => resolve(response.text()));
+  });
+  let p2 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=2`,
+    }).then((response) => resolve(response.text()));
+  });
+  Promise.all([p1, p2]).then((text) => {
+    document.querySelector('.out-5').textContent = text;
+  });
+}
+document.querySelector('.b-5').addEventListener('click', t5);
 // ваше событие здесь!!!
 
 // Task 6 ============================================
@@ -134,8 +170,30 @@ function t5() {}
     out-6 результат. Запускаться функция должна по нажатию b-6. </p>
 */
 
-function t6() {}
-
+function t6() {
+  let p1 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=3&num1=7&num2=13`,
+    }).then((response) => resolve(response.text()));
+  });
+  let p2 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=4&num1=7&num2=13`,
+    }).then((response) => resolve(response.text()));
+  });
+  Promise.all([p1, p2]).then((text) => {
+    document.querySelector('.out-6').textContent = text;
+  });
+}
+document.querySelector('.b-6').addEventListener('click', t6);
 // ваше событие здесь!!!
 
 // Task 7 ============================================
@@ -150,8 +208,30 @@ function t6() {}
 
 */
 
-function t7() {}
-
+function t7() {
+  let p1 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=5`,
+    }).then((response) => resolve(response.text()));
+  });
+  let p2 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=6&num1=7&num2=13`,
+    }).then((response) => resolve(response.text()));
+  });
+  Promise.all([p1, p2]).then((text) => {
+    document.querySelector('.out-7').textContent = text;
+  });
+}
+document.querySelector('.b-7').addEventListener('click', t7);
 // ваше событие здесь!!!
 
 // Task 8 ============================================
@@ -167,6 +247,28 @@ function t7() {}
 нажатию b-8.</p>
 */
 
-function t8() {}
-
+function t8() {
+  let p1 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=7`,
+    }).then((response) => resolve(response.text()));
+  });
+  let p2 = new Promise((resolve, reject) => {
+    fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `auth=${authKey}&action=8&year=1978`,
+    }).then((response) => resolve(response.text()));
+  });
+  Promise.all([p1, p2]).then((text) => {
+    document.querySelector('.out-8').textContent = text;
+  });
+}
+document.querySelector('.b-8').addEventListener('click', t8);
 // ваше событие здесь!!!
